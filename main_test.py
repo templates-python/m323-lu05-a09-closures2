@@ -1,6 +1,7 @@
-import main
+from main import create_counter
 
-def test(capsys):
-    main.calculate()
-    captured = capsys.readouterr()
-    assert captured.out == "Total: 78.75\n"
+def test_create_counter():
+    counter = create_counter()
+    assert counter() == 1
+    assert counter() == 2
+    assert counter() == 3

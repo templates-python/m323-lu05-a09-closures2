@@ -1,12 +1,20 @@
-def calculate():
-    """
-    calculates the total
-    :return: None
-    """
-    price = 15.75
-    quantity = 3  # TODO change quantity to 5
-    print(f'Total: {price * quantity}')
+# Version mit globaler Variable
+counter = 0
+
+def increment_counter():
+    global counter
+    counter += 1
+    print(f"Counter: {counter}")
+    return counter
+
+# Ihr Ziel ist es, diesen Code zu refaktorieren,
+# um die globale Variable durch ein Closure (create_counter) zu ersetzen.
+def create_counter():
+    ...
 
 
 if __name__ == '__main__':
-    calculate()
+    # Auch mit dem Closure soll der Aufruf von increment_counter() wie gewohnt funktionieren.
+    increment_counter()
+    increment_counter()
+    increment_counter()
