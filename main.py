@@ -1,20 +1,24 @@
-# Version mit globaler Variable
-counter = 0
-
-def increment_counter():
-    global counter
-    counter += 1
-    print(f"Counter: {counter}")
-    return counter
-
-# Ihr Ziel ist es, diesen Code zu refaktorieren,
-# um die globale Variable durch ein Closure (create_counter) zu ersetzen.
 def create_counter():
-    ...
+    """
+    Erstellt einen Counter, der bei jedem Aufruf um 1 erhöht wird.
+
+    :return: Wert des Counters
+    """
+    counter = 0
+
+    def increment_counter():
+        nonlocal counter
+        counter += 1
+        print(f"Counter: {counter}")
+        return counter
+
+    return increment_counter
 
 
 if __name__ == '__main__':
     # Auch mit dem Closure soll der Aufruf von increment_counter() wie gewohnt funktionieren.
+    increment_counter = create_counter()
+
     increment_counter()
     increment_counter()
     increment_counter()
