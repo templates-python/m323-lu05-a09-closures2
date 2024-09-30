@@ -15,7 +15,7 @@ def create_counter():
     return increment_counter
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Auch mit dem Closure soll der Aufruf von increment_counter() wie gewohnt funktionieren.
     increment_counter = create_counter()
 
