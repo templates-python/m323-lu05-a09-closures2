@@ -1,3 +1,8 @@
+"""Refactoring: Vermeiden globaler Variablen durch Closures.
+
+Aufgabenstellung: https://wiki.bzz.ch/modul/m323/learningunits/lu05/aufgaben/closures2
+"""
+
 # Version mit globaler Variable
 counter = 0
 
