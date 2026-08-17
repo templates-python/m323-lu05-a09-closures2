@@ -1,3 +1,8 @@
+"""Refactoring: Vermeiden globaler Variablen durch Closures.
+
+Aufgabenstellung: https://wiki.bzz.ch/modul/m323/learningunits/lu05/aufgaben/closures2
+"""
+
 def create_counter():
     """
     Erstellt einen Counter, der bei jedem Aufruf um 1 erhöht wird.
@@ -16,9 +21,9 @@ def create_counter():
 
 
 if __name__ == "__main__":
-    # Auch mit dem Closure soll der Aufruf von increment_counter() wie gewohnt funktionieren.
-    increment_counter = create_counter()
+    # Auch mit dem Closure soll der Aufruf von demo_increment_counter() wie gewohnt funktionieren.
+    demo_increment_counter = create_counter()
 
-    increment_counter()
-    increment_counter()
-    increment_counter()
+    demo_increment_counter()
+    demo_increment_counter()
+    demo_increment_counter()
